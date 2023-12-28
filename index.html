@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown</title>
+    <link rel="stylesheet" href="countdown.css">
+</head>
+<body>
+<div class="container">
+    <img src="https://res.cloudinary.com/digdliiab/image/upload/v1671728043/good-bye-2022-welcome-2023-gif-images_vxycy6.gif" class="logo">
+    <div class="content">
+        <p>Let's Remove Worries and hands on Memories.....</p>
+        <h1>Happy <span class="yellow">New </span>Year</h1>
+        <div class="launch-time">
+            <div>
+                <p id="days">00</p>
+                <span>Days</span>
+            </div>
+            <div>
+                <p id="hours">00</p>
+                <span>Hours</span>
+            </div>
+            <div>
+                <p id="minutes">00</p>
+                <span>Minutes</span>
+            </div>
+            <div>
+                <p id="seconds">00</p>
+                <span>Seconds</span>
+            </div>
+        </div>
+       <a href="year.html"><button type="button">Have fun<img src="https://res.cloudinary.com/digdliiab/image/upload/v1671728466/triangle_a1c1j6.png"></button></a>
+    </div>
+    <img src="https://res.cloudinary.com/digdliiab/image/upload/v1671723089/rocket_fbnidd.png" class="rocket">
+</div>
+
+<div id="happyNew">
+    <h3>Surprise</h3>
+    <div class="new">
+      <p><i>Enjoy Filledyear Ahead folks!!</i></p>
+      <p>open Have fun and enjoy</p>
+      <button class="button" onclick="validate()"><img src="https://res.cloudinary.com/digdliiab/image/upload/v1671758894/e138a174c33a48931521dcc5639d4a03_roo1hk.jpg" alt="" width="60%" height="40%"></button>
+    </div>
+    <img src="https://res.cloudinary.com/digdliiab/image/upload/v1671758694/Cross-mark-isolated-on-transparent-background-PNG_aph8qx.png" alt="" class="clicky" onclick="validate()">
+  </div>
+  
+
+<script>
+    var countDownDate =new Date("jan 1,2024 00:00:00").getTime();
+    var x=setInterval(function(){
+    var now =new Date().getTime();
+    var distance =countDownDate-now;
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    document.getElementById("days").innerHTML=days;
+    document.getElementById("hours").innerHTML=hours;
+    document.getElementById("minutes").innerHTML=minutes;
+    document.getElementById("seconds").innerHTML=seconds;
+    if(distance<0){
+        clearInterval(x);
+        document.getElementById("days").innerHTML="00";
+        document.getElementById("hours").innerHTML="00";
+        document.getElementById("minutes").innerHTML="00";
+        document.getElementById("seconds").innerHTML="00";
+    } 
+},1000);
+ </script>
+ <script>
+    let modelBox = document.getElementById("happyNew");
+    document.onmouseleave = function(){
+        modelBox.style.display = "block";
+    }
+    function validate() {
+        modelBox.style.display = "none";
+    }
+</script>
+</body>
+</html>
